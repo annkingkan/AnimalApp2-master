@@ -21,7 +21,7 @@ public class GameActivity extends AppCompatActivity {
     ImageView questionImageView; //รูปคำถาม
     ImageButton volumnImageButton;
     MediaPlayer mediaPlayer; //เล่นไฟล์เสียง
-    int questionCount= 1; //เก็บข้อคำถาม
+    int questionCount= 10; //เก็บข้อคำถาม
     ArrayList<Integer> qID = new ArrayList<Integer>(); //qID แรนดอมโจทย์
     String answer; //คำตอบ
     int score = 0; //รวมคะแนน
@@ -50,7 +50,7 @@ public class GameActivity extends AppCompatActivity {
 
     }//onCreate
 
-    private void setQuestion(int qID) { //กำหนดข้อคำถามและเฉลยในแต่ละข้อ
+    private void setQuestion(Integer qID) { //กำหนดข้อคำถามและเฉลยในแต่ละข้อ
         if (qID == 1) {
             answer = "นก";
             questionImageView.setImageResource(R.drawable.bird);//รูป
@@ -68,15 +68,166 @@ public class GameActivity extends AppCompatActivity {
             btn4.setText(choice.remove(0));
         }
 
+        if (qID == 2) {
+            answer = "แมว";
+            questionImageView.setImageResource(R.drawable.cat);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.cat);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("แมว");
+            choice.add("ช้าง");
+            choice.add("สิงโต");
+            choice.add("แกะ");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 3) {
+            answer = "วัว";
+            questionImageView.setImageResource(R.drawable.cow);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.cow);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("วัว");
+            choice.add("แมว");
+            choice.add("สุนัข");
+            choice.add("ช้าง");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 4) {
+            answer = "สุนัข";
+            questionImageView.setImageResource(R.drawable.dog);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.dog);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("สุนัข");
+            choice.add("ยุง");
+            choice.add("ม้า");
+            choice.add("แกะ");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 5) {
+            answer = "ช้าง";
+            questionImageView.setImageResource(R.drawable.elephant);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.elephant);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("ช้าง");
+            choice.add("สิงโต");
+            choice.add("หมู");
+            choice.add("ม้า");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 6) {
+            answer = "ม้า";
+            questionImageView.setImageResource(R.drawable.horse);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.horse);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("ม้า");
+            choice.add("แมว");
+            choice.add("วัว");
+            choice.add("แกะ");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 7) {
+            answer = "สิงโต";
+            questionImageView.setImageResource(R.drawable.lion);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.lion);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("สิงโต");
+            choice.add("ยุง");
+            choice.add("หมู");
+            choice.add("นก");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 8) {
+            answer = "ยุง";
+            questionImageView.setImageResource(R.drawable.mosquito);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.mosquito);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("ยุง");
+            choice.add("แกะ");
+            choice.add("หมู");
+            choice.add("ช้าง");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 9) {
+            answer = "หมู";
+            questionImageView.setImageResource(R.drawable.pig);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.pig);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("หมู");
+            choice.add("วัว");
+            choice.add("นก");
+            choice.add("แกะ");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
+        if (qID == 10) {
+            answer = "แกะ";
+            questionImageView.setImageResource(R.drawable.sheep);//รูป
+            mediaPlayer = MediaPlayer.create(this, R.raw.sheep);
+
+            ArrayList<String> choice = new ArrayList<String>(); //ใช้ตัวแปลchoice แรนดอมชอยส์
+            choice.add("แกะ");
+            choice.add("แมว");
+            choice.add("สิงโต");
+            choice.add("ม้า");//สัตว์ที่จะให้แสดง
+            Collections.shuffle(choice);//กำหนดให้แรนดอม
+            btn1.setText(choice.remove(0));
+            btn2.setText(choice.remove(0));
+            btn3.setText(choice.remove(0));
+            btn4.setText(choice.remove(0));
+        }
+
 
     }//end setQuestion
     public void choiceAns(View view) {
         Button button = (Button) view;
         String buttonString = button.getText().toString();
     //เอาข้อความบนปุ่มมาเก็บในตัวแปล buttonString //.toString เอามาทุกข้อความ
-        if (buttonString.equals(answer)) ;
-
-    {
+        if (buttonString.equals(answer)) {
         score++; //ถ้าตำตอบถูกต้องก็จะบวกคะแนน
 
     }//end methot choiceAns // choiceAns ตรวจคำตอบ
@@ -88,7 +239,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void dialogboxScore() { // Methotสำหรับแสดงคะแนน
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("สรุปคะแนน");
         builder.setMessage("ได้คะแนน " +score+ " คะแนน")
             .setCancelable(false)
