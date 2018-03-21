@@ -25,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     ArrayList<Integer> qID = new ArrayList<Integer>(); //qID แรนดอมโจทย์
     String answer; //คำตอบ
     int score = 0; //รวมคะแนน
+    String getNameString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //เจนเรสทุกอย่างที่ออกแบบไว้
@@ -232,16 +233,18 @@ public class GameActivity extends AppCompatActivity {
 
     }//end methot choiceAns // choiceAns ตรวจคำตอบ
         if (qID.isEmpty()) {//isEmpty เช็คจำนวนข้อqID ว่าครบมั้ย //หากทำครบทุกข้อแล้วให้แสดงคะแนน
-            dialogboxScore(); //เมดตอดแสดงคะแนนรวม
+            getNameString =getIntent().getStringExtra("Name");
+
+            dialogboxScore(getNameString); //เมดตอดแสดงคะแนนรวม
         } else { //ถ้ายังทำไม่ครบข้อ ก็ไปเรียกเมดตอดsetQuestion มาทำต่อ
             setQuestion(qID.remove(0));
         }
     }
 
-    private void dialogboxScore() { // Methotสำหรับแสดงคะแนน
+    private void dialogboxScore(String getNameString) { // Methotสำหรับแสดงคะแนน
         final AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("สรุปคะแนน");
-        builder.setMessage("ได้คะแนน " +score+ " คะแนน")
+        builder.setMessage(getNameString+"ได้คะแนน " +score+ " คะแนน")
             .setCancelable(false)
             .setPositiveButton("ออกจากเกม", new DialogInterface.OnClickListener() {
                 @Override
